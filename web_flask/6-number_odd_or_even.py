@@ -29,12 +29,6 @@ def pythoniscool(text='is cool'):
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
-@app.route('/python/<text>', strict_slashes=False)
-def pythoniscool(text='is cool'):
-    return 'Python ' + text.replace('_', ' ')
-
-
-@app.route('/number/<int:n>', strict_slashes=False)
 def imanumber(n):
     return "{:d} is a number".format(n)
 
@@ -43,6 +37,8 @@ def imanumber(n):
 def numbersandtemplates(n):
     """display a HTML page only if n is an integer"""
     return render_template('5-number.html', n=n)
+
+
 @app.route('/airbnb-dynamic/number_odd_or_even/<int:n>', strict_slashes=False)
 def number_odd_or_even(n):
     """display a HTML page only if n is an integer"""
